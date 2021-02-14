@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trailers/src/models/pelicula_model.dart';
+import 'package:trailers/src/utils/constants.dart';
 
 class MovieHorizontal extends StatelessWidget {
   final List<Pelicula> peliculas;
@@ -11,7 +12,7 @@ class MovieHorizontal extends StatelessWidget {
     final _screenSize = MediaQuery.of(context).size;
 
     return Container(
-      height: _screenSize.height * 0.2,
+      height: _screenSize.height * 0.25,
       child: PageView(
         pageSnapping: false,
         controller: PageController(initialPage: 1, viewportFraction: 0.3),
@@ -39,7 +40,8 @@ class MovieHorizontal extends StatelessWidget {
             Text(
               pelicula.title,
               overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).textTheme.caption,
+              // style: Theme.of(context).textTheme.caption,
+              style: kTextTarjetHorizontal,
             ),
           ],
         ),

@@ -13,7 +13,7 @@ class PeliculasProvider {
     final decodedData = json.decode(resp.body);
     //print(decodedData);
     final peliculas = new Peliculas.fromJsonList(decodedData['results']);
-    print(peliculas.items[1].title);
+    print(peliculas.items[9].title);
 
     return peliculas.items;
   }
@@ -37,4 +37,14 @@ class PeliculasProvider {
 
     return await _procesarRespuesta(url);
   }
+
+  // GET movie/{movie_id}/videos
+  // Future<List<Pelicula>> getVideos() async {
+  //   final url = Uri.https(_url, '3/movie/13/videos', {
+  //     'api_key': _apiKey,
+  //     'language': _languaje,
+  //   });
+
+  //   return await _procesarRespuesta(url);
+  // }
 }

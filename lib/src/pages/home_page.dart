@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trailers/src/providers/peliculas_provider.dart';
+import 'package:trailers/src/utils/constants.dart';
 import 'package:trailers/src/widgets/card_swiper_widget.dart';
 import 'package:trailers/src/widgets/movie_horizontal.dart';
 
@@ -12,11 +13,14 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Trailers de películas'),
-        backgroundColor: Colors.indigoAccent,
+        title: Text(
+          'Estrenos de películas',
+          style: kTextAppBar,
+        ),
+        backgroundColor: Colors.black87,
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.search),
+            icon: Icon(Icons.search, color: Colors.orange[800]),
             onPressed: () {},
           ),
         ],
@@ -56,9 +60,13 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-              padding: EdgeInsets.only(left: 20.0),
-              child: Text('Populares',
-                  style: Theme.of(context).textTheme.subtitle1)),
+            padding: EdgeInsets.only(left: 20.0),
+            child: Text(
+              'Populares',
+              // style: Theme.of(context).textTheme.subtitle1)),
+              style: kTextPopulares,
+            ),
+          ),
           SizedBox(height: 5.0),
           FutureBuilder(
             future: peliculasProvider.getPopulares(),
