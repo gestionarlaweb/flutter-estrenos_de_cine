@@ -8,9 +8,11 @@ class PeliculaDetalle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Pelicula pelicula = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
+          // _crearAppbarSimple(pelicula),
           _crearAppbar(pelicula),
           SliverList(
             delegate: SliverChildListDelegate(
@@ -27,23 +29,29 @@ class PeliculaDetalle extends StatelessWidget {
     );
   }
 
+  // Widget _crearAppbarSimple(Pelicula pelicula) {
+  //   return FadeInImage(
+  //     image: NetworkImage(pelicula.getBackgroundImg()),
+  //     placeholder: AssetImage('assets/img/loading.gif'),
+  //     fadeInDuration: Duration(microseconds: 150),
+  //     fit: BoxFit.cover,
+  //   );
+  // }
+
   Widget _crearAppbar(Pelicula pelicula) {
     return SliverAppBar(
       elevation: 2.0,
-      backgroundColor: Colors.blueAccent,
-      expandedHeight: 200.0,
+      backgroundColor: Colors.black54,
+      expandedHeight: 260.0,
       floating: false,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
-        centerTitle: true,
-        title: Text(
-          pelicula.title,
-          style: kTextPopulares,
-        ),
+        // centerTitle: true,
+        // title: Text(pelicula.title, style: kTextPopulares),
         background: FadeInImage(
           image: NetworkImage(pelicula.getBackgroundImg()),
           placeholder: AssetImage('assets/img/loading.gif'),
-          fadeInDuration: Duration(microseconds: 150),
+          fadeInDuration: Duration(milliseconds: 350),
           fit: BoxFit.cover,
         ),
       ),
@@ -71,16 +79,10 @@ class PeliculaDetalle extends StatelessWidget {
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
-                pelicula.title,
-                style: kTextAppBar,
-                overflow: TextOverflow.ellipsis,
-              ),
-              Text(
-                pelicula.originalTitle,
-                style: kTextPopulares,
-                overflow: TextOverflow.ellipsis,
-              ),
+              Text(pelicula.title,
+                  style: kTextAppBar, overflow: TextOverflow.ellipsis),
+              Text(pelicula.originalTitle,
+                  style: kTextPopulares, overflow: TextOverflow.ellipsis),
               Row(
                 children: <Widget>[
                   Icon(
@@ -148,13 +150,14 @@ class PeliculaDetalle extends StatelessWidget {
             child: FadeInImage(
               image: NetworkImage(actor.getFoto()),
               placeholder: AssetImage('assets/img/no-image.jpg'),
-              height: 150.0,
+              height: 140.0,
               fit: BoxFit.cover,
             ),
           ),
           Text(
             actor.name,
             style: kTextTarjetHorizontal,
+            overflow: TextOverflow.ellipsis,
           )
         ],
       ),

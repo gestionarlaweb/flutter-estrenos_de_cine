@@ -58,7 +58,7 @@ class Actor {
 
   getFoto() {
     if (profilePath == null) {
-      return 'http://forum.spaceengine.org/styles/se/theme/images/no_avatar.jpg';
+      return 'https://www.allianceplast.com/wp-content/uploads/no-image.png';
     } else {
       return 'https://image.tmdb.org/t/p/w500/$profilePath';
     }

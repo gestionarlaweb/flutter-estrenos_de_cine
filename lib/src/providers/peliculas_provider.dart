@@ -35,7 +35,7 @@ class PeliculasProvider {
     final decodedData = json.decode(resp.body);
     //print(decodedData);
     final peliculas = new Peliculas.fromJsonList(decodedData['results']);
-    print(peliculas.items[9].title);
+    //print(peliculas.items[9].title);
 
     return peliculas.items;
   }
@@ -55,7 +55,7 @@ class PeliculasProvider {
     if (_cargando) return []; // Si estoy cargando datos no me recargues nada
     _cargando = true;
     _popularesPage++;
-    print('Cargando la siguiente página');
+    //print('Cargando la siguiente página');
 
     final url = Uri.https(_url, '3/movie/popular', {
       'api_key': _apiKey,

@@ -40,14 +40,15 @@ class BuscadorDelegate extends SearchDelegate {
 // Crea los resultados que vamos a mostrar
   @override
   Widget buildResults(BuildContext context) {
-    return Center(
-      child: Container(
-        height: 100.0,
-        width: 100.0,
-        color: Colors.amberAccent,
-        child: Text(seleccion),
-      ),
-    );
+    return Container();
+    // return Center(
+    //   child: Container(
+    //     height: 100.0,
+    //     width: 100.0,
+    //     color: Colors.amberAccent,
+    //     child: Text(seleccion),
+    //   ),
+    // );
   }
 
 // Sugerencias al escribir
