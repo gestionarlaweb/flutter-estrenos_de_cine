@@ -14,6 +14,9 @@ class Peliculas {
 }
 
 class Pelicula {
+  // Me creo una propiedad para el Widget Hero
+  String uniqueId;
+
   int voteCount;
   int id;
   bool video;
