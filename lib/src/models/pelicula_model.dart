@@ -65,7 +65,7 @@ class Pelicula {
 
   getPosterImg() {
     if (posterPath == null) {
-      return;
+      return 'https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/6/60/No_Image_Available.png/revision/latest/scale-to-width-down/340?cb=20191130161619';
     } else {
       return 'https://image.tmdb.org/t/p/w500/$posterPath';
     }
@@ -73,7 +73,7 @@ class Pelicula {
 
   getBackgroundImg() {
     if (posterPath == null) {
-      return;
+      return 'https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/6/60/No_Image_Available.png/revision/latest/scale-to-width-down/340?cb=20191130161619';
     } else {
       return 'https://image.tmdb.org/t/p/w500/$backdropPath';
     }
