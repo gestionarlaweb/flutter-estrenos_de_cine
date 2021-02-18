@@ -9,21 +9,22 @@ class PeliculaDetalle extends StatelessWidget {
   Widget build(BuildContext context) {
     final Pelicula pelicula = ModalRoute.of(context).settings.arguments;
     return Scaffold(
-        body: CustomScrollView(
-      slivers: <Widget>[
-        _crearAppbar(pelicula),
-        SliverList(
-          delegate: SliverChildListDelegate(
-            [
-              SizedBox(height: 10.0),
-              _posterTitulo(pelicula),
-              _descripcion(pelicula),
-              _crearCastingActores(pelicula),
-            ],
+      body: CustomScrollView(
+        slivers: <Widget>[
+          _crearAppbar(pelicula),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                SizedBox(height: 10.0),
+                _posterTitulo(pelicula),
+                _descripcion(pelicula),
+                _crearCastingActores(pelicula),
+              ],
+            ),
           ),
-        ),
-      ],
-    ));
+        ],
+      ),
+    );
   }
 
   Widget _crearAppbar(Pelicula pelicula) {
@@ -42,7 +43,7 @@ class PeliculaDetalle extends StatelessWidget {
         background: FadeInImage(
           image: NetworkImage(pelicula.getBackgroundImg()),
           placeholder: AssetImage('assets/img/loading.gif'),
-          fadeInDuration: Duration(microseconds: 250),
+          fadeInDuration: Duration(microseconds: 150),
           fit: BoxFit.cover,
         ),
       ),

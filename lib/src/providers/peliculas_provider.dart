@@ -83,6 +83,17 @@ class PeliculasProvider {
     return cast.actores;
   }
 
+// GET /search/movie
+  Future<List<Pelicula>> buscarPelicula(String query) async {
+    final url = Uri.https(_url, '3/search/movie', {
+      'api_key': _apiKey,
+      'language': _languaje,
+      'query': query,
+    });
+
+    return await _procesarRespuesta(url);
+  }
+
   // GET movie/{movie_id}/videos
   // Future<List<Pelicula>> getVideos() async {
   //   final url = Uri.https(_url, '3/movie/13/videos', {
