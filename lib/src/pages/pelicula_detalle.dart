@@ -29,15 +29,6 @@ class PeliculaDetalle extends StatelessWidget {
     );
   }
 
-  // Widget _crearAppbarSimple(Pelicula pelicula) {
-  //   return FadeInImage(
-  //     image: NetworkImage(pelicula.getBackgroundImg()),
-  //     placeholder: AssetImage('assets/img/loading.gif'),
-  //     fadeInDuration: Duration(microseconds: 150),
-  //     fit: BoxFit.cover,
-  //   );
-  // }
-
   Widget _crearAppbar(Pelicula pelicula) {
     return SliverAppBar(
       elevation: 2.0,
@@ -46,8 +37,6 @@ class PeliculaDetalle extends StatelessWidget {
       floating: false,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
-        // centerTitle: true,
-        // title: Text(pelicula.title, style: kTextPopulares),
         background: FadeInImage(
           image: NetworkImage(pelicula.getBackgroundImg()),
           placeholder: AssetImage('assets/img/loading.gif'),
@@ -64,7 +53,6 @@ class PeliculaDetalle extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Hero(
-            //tag: pelicula.id,
             tag: pelicula.uniqueId,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20.0),
@@ -81,25 +69,167 @@ class PeliculaDetalle extends StatelessWidget {
             children: <Widget>[
               Text(pelicula.title,
                   style: kTextAppBar, overflow: TextOverflow.ellipsis),
+              SizedBox(
+                height: 2.0,
+              ),
               Text(pelicula.originalTitle,
                   style: kTextPopulares, overflow: TextOverflow.ellipsis),
+              SizedBox(
+                height: 2.0,
+              ),
               Row(
                 children: <Widget>[
                   Icon(
                     Icons.star_border,
                     color: Colors.amberAccent,
                   ),
+                  SizedBox(
+                    width: 4.0,
+                  ),
                   Text(
                     pelicula.voteAverage.toString(),
                     style: kTextPopulares,
                   ),
                 ],
-              )
+              ),
+              SizedBox(
+                height: 2.0,
+              ),
+              Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.date_range_outlined,
+                    color: Colors.amberAccent,
+                  ),
+                  SizedBox(
+                    width: 4.0,
+                  ),
+                  Text(
+                    pelicula.releaseDate,
+                    style: kTextPopulares,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 2.0,
+              ),
+              // Genero
+              Row(
+                children: <Widget>[
+                  SizedBox(
+                    width: 4.0,
+                  ),
+                ],
+              ),
+              generoPelicula(pelicula),
             ],
           ))
         ],
       ),
     );
+  }
+
+  generoPelicula(Pelicula pelicula) {
+    List genero;
+
+    genero = [pelicula.genreIds.first];
+
+    if (genero.toString() == '[28]') {
+      return Text(
+        'Acción',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[12]') {
+      return Text(
+        'Aventura',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[16]') {
+      return Text(
+        'Animación',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[35]') {
+      return Text(
+        'Comedia',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[80]') {
+      return Text(
+        'Crimen',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[99]') {
+      return Text(
+        'Documental',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[18]') {
+      return Text(
+        'Drama',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[10751]') {
+      return Text(
+        'Familia',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[14]') {
+      return Text(
+        'Fantasía',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[36]') {
+      return Text(
+        'Historia',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[27]') {
+      return Text(
+        'Terror',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[10402]') {
+      return Text(
+        'Música',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[9648]') {
+      return Text(
+        'Misterio',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[10749]') {
+      return Text(
+        'Romance',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[878]') {
+      return Text(
+        'Ciencia ficción',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[10770]') {
+      return Text(
+        'Película de Tv',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[53]') {
+      return Text(
+        'Suspense',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[10752]') {
+      return Text(
+        'Bélica',
+        style: kTextGenero,
+      );
+    } else if (genero.toString() == '[37]') {
+      return Text(
+        'Western',
+        style: kTextGenero,
+      );
+    }
   }
 
   Widget _descripcion(Pelicula pelicula) {

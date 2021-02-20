@@ -15,3 +15,9 @@ const kTextTarjetHorizontal = TextStyle(
   color: Colors.white,
   fontFamily: 'Raleway',
 );
+const kTextGenero = TextStyle(
+  fontSize: 16.0,
+  color: Colors.blue,
+  fontWeight: FontWeight.bold,
+  fontFamily: 'Raleway',
+);
