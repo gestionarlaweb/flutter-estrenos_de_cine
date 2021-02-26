@@ -1,13 +1,14 @@
 import 'dart:async';
 
 import 'package:http/http.dart' as http;
+import 'package:trailers/src/global/environment.dart';
 import 'package:trailers/src/models/actores_model.dart';
 import 'dart:convert';
 
 import 'package:trailers/src/models/pelicula_model.dart';
 
 class PeliculasProvider {
-  String _apiKey = '28d6c51cb46f81f694274c2326fb5f3e';
+  String _apiKey = '${Environment.apiKey}';
   String _url = 'api.themoviedb.org';
   String _languaje = 'es-ES';
 
